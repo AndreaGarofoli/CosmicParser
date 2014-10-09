@@ -1,5 +1,6 @@
 # Parsa un file .vcf e genera un file di testo con: cromosoma, posizione e 
-# il rapporto del n° di riscontri di mutazioni di questo tipo su tutte le mutazioni studiate
+# il rapporto del n° di riscontri di mutazioni di questo tipo su tutte le
+# mutazioni studiate
 
 class VCFp
 	attr_reader :m

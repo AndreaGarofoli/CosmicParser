@@ -10,12 +10,12 @@
       m=open(i).readlines.map{ |i| i.chomp.to_s}
       m.size.times{ |x|
         if m[x][0]=="#" then m[x]=NIL
-          
         else
           m[x]=m[x].split("\t")
           c=c+m[x][7].partition('CNT=').last.to_i
         end
       }
+      
       m=m.compact
       m.delete_if {|x| x == nil}  
 
@@ -24,8 +24,11 @@
           m[x][7]="#{m[x][7].partition('CNT=').last.to_i}/#{c}"
           m[x]=m[x].join("\t")
       }
+
       File.open("out.txt", "w") {|f| f.write(m.join("\n"))}
+
     end
+
   end
 a=VCFp.new
 a.rimc("cosm.vcf")
